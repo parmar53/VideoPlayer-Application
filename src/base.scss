@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap");
+
+    $text-color: #000000;
+    $white-primary: #d3d3d3;
+    $blue-secondary: #ffffff;
+    $border-color: #0004f5;
+
+    $breakpoint-medium: 1224px;
+    $breakpoint-small: 520px;
+
+
+  *{
+      margin: 0;
+      padding: 0;
+
+      box-sizing: border-box;
+  }
+
+  body{
+      background: var($white-primary);
+      background-attachment: fixed;
+      color: var($text-color);
+      font-family: "Roboto", sans-serif;
+      letter-spacing: 0.1px;
+
+  }

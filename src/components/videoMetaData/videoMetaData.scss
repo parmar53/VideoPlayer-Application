@@ -1,0 +1,27 @@
+@import "../../base.scss";
+
+.videoMetaData{
+    &__top{
+
+        border-bottom: 0.2px solid $border-color;
+        h5{
+            cursor: pointer;
+        }
+    }
+
+    &__description{
+        font-size: 0.9rem;
+        white-space: pre-line;
+        border-bottom: 0.2px solid $border-color;
+
+        .showMoreText{
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            color: #000000;
+            font-weight: 600;
+        }
+    }
+
+
+}

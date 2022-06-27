@@ -1,25 +1,89 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import VideoJS from './components/VideoJS';
+import "./App.scss";
+import Sidebar from './components/sidebar/Sidebar';
+import {BrowserRouter as Router, Redirect, Switch, Route, useParams} from "react-router-dom";
+import { Container } from 'react-bootstrap';
+import Header  from './components/header/Header';
+import VideoHorizontal from './components/videoHorizontal/VideoHorizontal';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import userEvent from '@testing-library/user-event';
 
-function App() {
+
+
+// const Layout = ({children}) => {
+
+//     //Redirect videos to main watchScreen
+//     // const params = useParams();
+
+//     // console.log(params); 
+  
+//     // <h2>userId is  {params.id}</h2>;
+
+//     return(
+//         <>
+//         <Header />
+//         <div className='app__container'>
+//             <Sidebar/>
+            
+//             <Container fluid className='app__main'>
+//                {children}
+//             </Container>
+            
+//         </div>
+         
+//         </>
+//     )
+// }
+
+// function Account() {
+//     const { account } = useParams();
+  
+//     return <h3>ID: {account}</h3>;
+//   }
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+         <>
+         <Header />
+             <div className='app__container'>
+                 <Sidebar/>
+                
+                 <Router>
+            <Switch>
+            <Route path = "/" exact>
+                {/* <Layout> */}
+                    <VideoJS />
+                {/* </Layout> */}
+            </Route>
+            
+
+            {/* Route for Horizontal Videos */}
+            <Route path= "/:id" >
+                
+                    <VideoJS />
+                    
+            </Route>
+
+            {/* <Route>
+                <Redirect to="/" />
+            </Route> */}
+
+        </Switch>
+        </Router>
+                 {/* <Container fluid className='app__main'>
+                    {children}
+                 </Container> */}
+                
+             </div>
+             
+            </>
+
+       
+  
+    )
 }
 
-export default App;
+export default App

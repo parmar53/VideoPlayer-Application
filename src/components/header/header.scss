@@ -1,0 +1,15 @@
+@import "../../base.scss";
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+    background-color: --white-primary;
+
+    height: 10vh;
+    width: 100%;
+   
+}
+
